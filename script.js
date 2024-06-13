@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
         updateBar();
-    }
+    }, false);
 
     function updateBar() {
         const value = parseInt(counter.value);
