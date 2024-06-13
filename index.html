@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteur avec boutons</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="price">(prix de la réservation (4escape) : 215€)</div>
+    <div class="options-container">
+      <div class="counter-container">
+          Nb de parts :
+          <button class="btn" id="decrement">&#9664;</button>
+          <input type="text" id="counter" value="8" readonly>
+          <button class="btn" id="increment">&#9654;</button>
+      </div>
+    </div>
+    <div class="bar-container" id="bar-container"></div>
+    <div class="tooltip" id="end-tooltip"></div>
+    <div class="tooltip" id="clicked-tooltip"></div>
+    <script src="script.js"></script>
+</body>
+</html>

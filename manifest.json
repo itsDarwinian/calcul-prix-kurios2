@@ -1,0 +1,11 @@
+{
+    "name": "Calculateur",
+    "version": "1.0.0",
+    "description": "Aide à la division d'un prix en parts égales",
+    "manifest_version": 3,
+    "author": "Erwan",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Calculateur"
+    }
+}
