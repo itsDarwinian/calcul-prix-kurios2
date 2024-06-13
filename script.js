@@ -1,33 +1,11 @@
-console.log("calculateur v0.3");
+console.log("calculateur v0.5");
 var price = 200;
 var selectionPrice = 26.875;
 var unitPrice = 26.875
 
-function updateBar() {
-    const value = parseInt(counter.value);
-    barContainer.innerHTML = '';
-    for (let i = 0; i < value; i++) {
-        const segment = document.createElement('div');
-        segment.className = 'bar-segment';
-        segment.textContent = i+1;
-        if (i === 0) {
-            segment.classList.add('selected');
-        }
-        segment.addEventListener('click', () => {
-            highlightClickedSegment(i);
-            selectSegmentsUpTo(i);
-        });
-        barContainer.appendChild(segment);
-    }
-    highlightClickedSegment(0);
-    showTooltip(endTooltip, barContainer.lastElementChild);
-    updateSelectedCount();
-    }
-
 window.addEventListener('message', (event) => {
             console.log(event.origin)
             if (event.origin !== 'https://kurioscape.4escape.io') {
-                // Assurez-vous de vérifier l'origine pour des raisons de sécurité
                 return;
             }
 
@@ -46,7 +24,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const clickedTooltip = document.getElementById('clicked-tooltip');
     const endTooltip = document.getElementById('end-tooltip');
 
+    window.addEventListener('message', (event) => {
+            console.log("inner code updateBar triggered");
+            if (event.origin !== 'https://kurioscape.4escape.io') {
+                return;
+            }
+        updateBar();
+    }
 
+    function updateBar() {
+        const value = parseInt(counter.value);
+        barContainer.innerHTML = '';
+        for (let i = 0; i < value; i++) {
+            const segment = document.createElement('div');
+            segment.className = 'bar-segment';
+            segment.textContent = i+1;
+            if (i === 0) {
+                segment.classList.add('selected');
+            }
+            segment.addEventListener('click', () => {
+                highlightClickedSegment(i);
+                selectSegmentsUpTo(i);
+            });
+            barContainer.appendChild(segment);
+        }
+        highlightClickedSegment(0);
+        showTooltip(endTooltip, barContainer.lastElementChild);
+        updateSelectedCount();
+    }
 
     function selectSegmentsUpTo(index) {
     const segments = document.querySelectorAll('.bar-segment');
