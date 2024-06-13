@@ -1,4 +1,4 @@
-var price = 215;
+var price = 200;
 var selectionPrice = 26.875;
 var unitPrice = 26.875
 
