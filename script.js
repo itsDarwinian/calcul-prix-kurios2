@@ -1,4 +1,4 @@
-console.log("calculateur v0.1");
+console.log("calculateur v0.2");
 var price = 200;
 var selectionPrice = 26.875;
 var unitPrice = 26.875
