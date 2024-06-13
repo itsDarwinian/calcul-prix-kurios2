@@ -11,10 +11,8 @@ window.addEventListener('message', (event) => {
 
             // Traiter les données reçues
             const data = event.data;
-            document.getElementById('message').textContent = data.message;
-            document.getElementById('value').textContent = data.value;
             price = data.value;
-            document.querySelector("#price").textContent = `(prix de la réservation (4escape) : ${price} €)`;
+            document.getElementById("price").textContent = `(prix de la réservation (4escape) : ${price} €)`;
         }, false);
 
 document.addEventListener('DOMContentLoaded', () => {
