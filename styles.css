@@ -11,13 +11,6 @@ body {
     background-color: #f0f0f0;
 }
 
-#price {
-    font-size: 32px;
-    color: #77777760;
-    font-weight: bold;
-    margin-bottom: 50px;
-}
-
 .bar-container {
     position: relative; /* Ajout de position relative pour positionner la barre-overlay */
     display: flex;
