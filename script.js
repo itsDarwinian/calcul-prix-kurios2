@@ -13,7 +13,6 @@ window.addEventListener('message', (event) => {
             const data = event.data;
             price = data.value;
             document.querySelector("#price").textContent = `(prix de la réservation (4escape) : ${price} €)`;
-            updateBar();
         }, false);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const endTooltip = document.getElementById('end-tooltip');
 
     window.addEventListener('message', (event) => {
-            console.log("inner code updateBar triggered");
+            //console.log("inner code updateBar triggered");
             if (event.origin !== 'https://kurioscape.4escape.io') {
                 return;
             }
