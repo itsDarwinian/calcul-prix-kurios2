@@ -1,4 +1,4 @@
-console.log("calculateur v0.5");
+console.log("calculateur v0.6");
 var price = 200;
 var selectionPrice = 26.875;
 var unitPrice = 26.875
@@ -12,7 +12,6 @@ window.addEventListener('message', (event) => {
             // Traiter les données reçues
             const data = event.data;
             price = data.value;
-            document.querySelector("#price").textContent = `(prix de la réservation (4escape) : ${price} €)`;
         }, false);
 
 document.addEventListener('DOMContentLoaded', () => {
