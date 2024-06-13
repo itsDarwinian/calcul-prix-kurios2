@@ -2,6 +2,21 @@ var price = 215;
 var selectionPrice = 26.875;
 var unitPrice = 26.875
 
+window.addEventListener('message', (event) => {
+            console.log(event.origin)
+            if (event.origin !== 'https://kurioscape.4escape.io') {
+                // Assurez-vous de vérifier l'origine pour des raisons de sécurité
+                return;
+            }
+
+            // Traiter les données reçues
+            const data = event.data;
+            document.getElementById('message').textContent = data.message;
+            document.getElementById('value').textContent = data.value;
+            price = data.value;
+            document.querySelector("#price").textContent = `(prix de la réservation (4escape) : ${price} €)`;
+        }, false);
+
 document.addEventListener('DOMContentLoaded', () => {
     const counter = document.getElementById('counter');
     const incrementButton = document.getElementById('increment');
