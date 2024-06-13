@@ -14,6 +14,7 @@ window.addEventListener('message', (event) => {
             const data = event.data;
             price = data.value;
             document.querySelector("#price").textContent = `(prix de la réservation (4escape) : ${price} €)`;
+            updateBar();
         }, false);
 
 document.addEventListener('DOMContentLoaded', () => {
