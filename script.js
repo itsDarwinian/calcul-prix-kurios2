@@ -1,4 +1,4 @@
-console.log("calculateur v0.6");
+console.log("calculateur v0.7");
 var price = 200;
 var selectionPrice = 26.875;
 var unitPrice = 26.875
@@ -13,7 +13,7 @@ window.addEventListener('message', (event) => {
             // Traiter les données reçues
             const data = event.data;
             price = data.value;
-            shares = data.defaultShares;
+            shares = parseInt(data.defaultShares);
         }, false);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     counter.value = shares;
 
     function updateBar() {
-        const value = parseInt(counter.value);
+        counter.value = shares;
         barContainer.innerHTML = '';
-        for (let i = 0; i < value; i++) {
+        for (let i = 0; i < shares; i++) {
             const segment = document.createElement('div');
             segment.className = 'bar-segment';
             segment.textContent = i+1;
@@ -106,13 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     incrementButton.addEventListener('click', () => {
-        counter.value = parseInt(counter.value) + 1;
+        shares =  + 1;
         updateBar();
     });
 
     decrementButton.addEventListener('click', () => {
         if (parseInt(counter.value) > 1) {
-            counter.value = parseInt(counter.value) - 1;
+            shares = shares - 1;
             updateBar();
         }
     });
