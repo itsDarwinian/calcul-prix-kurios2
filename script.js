@@ -1,4 +1,4 @@
-console.log("calculateur v0.7");
+console.log("calculateur v0.71");
 var price = 200;
 var selectionPrice = 26.875;
 var unitPrice = 26.875
@@ -31,8 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         updateBar();
     }, false);
-
-    counter.value = shares;
 
     function updateBar() {
         counter.value = shares;
@@ -106,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     incrementButton.addEventListener('click', () => {
-        shares =  + 1;
+        shares += 1;
         updateBar();
     });
 
