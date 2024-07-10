@@ -2,6 +2,7 @@ console.log("calculateur v0.6");
 var price = 200;
 var selectionPrice = 26.875;
 var unitPrice = 26.875
+var shares = 1;
 
 window.addEventListener('message', (event) => {
             console.log(event.origin)
@@ -12,6 +13,7 @@ window.addEventListener('message', (event) => {
             // Traiter les données reçues
             const data = event.data;
             price = data.value;
+            shares = data.defaultShares;
         }, false);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         updateBar();
     }, false);
+
+    counter.value = shares;
 
     function updateBar() {
         const value = parseInt(counter.value);
